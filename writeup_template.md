@@ -51,32 +51,32 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 2. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 
-Number of functions have been developed to implement the perspective transform ( all the methods are located in Perspctive.py library)
+Number of functions have been developed to implement the perspective transform ( all the methods are located in **Perspctive.py** library)
 
 - **save_PERSP_to_pickle_file** - saves perspective matrices to the pickle file
 - **load_PERSP_from_pickle_file** - loads the perspective matrices from the pickle file
 - **generates_perspective_pipeline** - builds trapezoid on straight lines 
 - **get_unwarped_image** - gets the original image and returns warped image 
 
-First I defined  trapezoid in on the straight lines of the original image (before perspective transform)
-For these purposes DrawLines.py library has been developed.
+First I defined  trapezoid on the straight lines of the original image (before perspective transform)
+For these purposes **DrawLines.py library** has been developed.
 It uses techniques for drawing straight lines developed in the first project
 
 ![Undistorted](./writeup_images/get_trapezoid.png)
 
 
 The second step is to define 4 desired points on the image. 
-We know that lines are straight on the original image and expect rectangle after transforamtion
+We know that lines are straight on the original image and expect rectangle after transformation
 
 dst =np.float32([[1000,0],[1000,700],[200,0],[200,700]])
 
 
 Finally we get perspactive matrix and the matrix for the opposite transformation by using **cv2.getPerspectiveTransform**  method
 
-These matrixes are saved in the pickle file and will are used in the later stages of the project.
+These matrixes are saved in the pickle file and will be used in the later stages of the project.
 
 
-We can see the result of transforamation of the original image to the warped one below
+We can see the result of the transforamation of the original image to the warped one below
 
 ![Warped Image](./writeup_images/warped_image.png)
 
@@ -87,6 +87,8 @@ I verified that my perspective transform was working as expected by drawing the 
 
 I used a combination of color and gradient thresholds to generate final binary image (thresholding steps at section **Step 3. Gradient and color transformations"** of the main notebook).
 
+The methods used for thresholding are placed in the **Thresholds.py** library
+
 
  **Gradients**
 
@@ -94,7 +96,7 @@ I used a combination of color and gradient thresholds to generate final binary i
     
 - We also consider the magnitude, or absolute value, of the gradient by x and y axis,which is just the square root of the squares of the individual x and y gradients. For a gradient in both the x and y directions, the magnitude is the square root of the sum of the squares.    
     
-- In the case of lane lines, we're interested only in edges of a particular orientation. So now we will explore the direction, or orientation, of the gradient.
+- In the case of lane lines, we're interested only in edges of a particular orientation. So we will explore the direction, or orientation, of the gradient as well.
 
 
 **Color space**
