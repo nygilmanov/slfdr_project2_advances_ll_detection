@@ -34,8 +34,8 @@ The goals / steps of this project are the following:
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image( TODO)
 
-The code for this step is contained in the section **"Step1. Pipeline for distortion elimination"** of the IPython notebook located in the root directory  **"./P2_Advanced_LL_Detection.ipynb"**.
-The methods for the camera calibration are located in Distortion.py library
+The code for this step is contained in the section **"Step1. Pipeline for distortion elimination"** of the IPython notebook located in the root directory  **"./P2_ADV_LL_DETECTION.ipynb"**.
+The methods for the camera calibration are located in **Distortion.py** library
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
